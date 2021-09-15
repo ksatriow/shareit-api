@@ -5,10 +5,11 @@ const swaggerUi = require("swagger-ui-express");
 const app = express();
 const bodyParser = require("body-parser");
 const usersRoutes = require("./routes/userRoute");
+const postsRoutes = require("./routes/postRoute");
 
 app.use(bodyParser.json());
 
-// Swagger 
+// Swagger
 const swaggerOption = {
   swaggerDefinition: (swaggerJsdoc.Options = {
     info: {
@@ -27,7 +28,8 @@ const swaggerDocs = swaggerJsdoc(swaggerOption);
 app.use("/shareit-api", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use("/users", usersRoutes);
+app.use("/posts", postsRoutes);
 
 app.listen(3000, () => {
-  console.log("I am ready to lisen you");
+  console.log("ShareIt API Ready");
 });
