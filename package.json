@@ -4,7 +4,8 @@
   "description": "backend api node express documented in swagger",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": " nodemon server.js"
   },
   "author": "satrio",
   "license": "ISC",
