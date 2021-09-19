@@ -26,9 +26,13 @@ const swaggerOption = {
 
 const swaggerDocs = swaggerJsdoc(swaggerOption);
 app.use("/shareit-api", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+app.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use("/users", usersRoutes);
 app.use("/posts", postsRoutes);
+// app.get("/", (req, res) => {
+//   res.send("Here is Shareit API docs");
+// });
 
 app.listen(3000, () => {
   console.log("ShareIt API Ready");
